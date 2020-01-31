@@ -1,0 +1,14 @@
+version: '2.3'
+
+services:
+  jupyter:
+    image: pman0214/pytorch_jupyterlab
+    container_name: pytorch_jupyterlab_sample
+    runtime: nvidia
+    volumes:
+      - ./src:/root/src
+      - ./data:/root/data
+    ports:
+      - 8887:8888
+    environment:
+      TZ: 'Asia/Tokyo'

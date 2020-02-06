@@ -9,6 +9,7 @@
   * jupyterlab
   * scikit-learn
   * imblearn
+  * statsmodels
 * Also provides sample `docker-compose.yml` files.
 
 ## Copyright, License

@@ -33,7 +33,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN set -x && \
 	apt update && \
 	apt install -y tzdata && \
-	pip --no-cache-dir install seaborn jupyter jupyterlab scikit-learn imblearn && \
+	pip --no-cache-dir install seaborn jupyter jupyterlab scikit-learn imblearn statsmodels && \
 	jupyter notebook --generate-config --allow-root && \
 	ipython3 profile create
 

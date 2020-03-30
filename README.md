@@ -6,7 +6,7 @@
 * Installs python libraries below:
   * seaborn
   * jupyter
-  * jupyterlab
+  * jupyterlab (password: jupyter)
   * scikit-learn
   * imblearn
   * statsmodels

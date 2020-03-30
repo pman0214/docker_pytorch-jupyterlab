@@ -42,6 +42,7 @@ ENV JUPYTER_CONFIG=/root/.jupyter/jupyter_notebook_config.py \
 RUN : "generate jupyter config file" && { \
 	echo "c.NotebookApp.ip = '0.0.0.0'"; \
 	echo "c.NotebookApp.open_browser = False"; \
+	echo "c.NotebookApp.password = \"sha1:b7c40958676d:fe82e5432ba0be429aa7391812c64d75c22194bc\""; \
 	} | tee ${JUPYTER_CONFIG}
 RUN : "generate ipython config file" && { \
 	echo "c.InteractiveShellApp.exec_lines = ["; \

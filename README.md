@@ -2,7 +2,7 @@
 
 ## Overview
 
-* Docker image based on `pytorch/pytorch:1.2-cuda10.0-cudnn7-devel`.
+* Docker image based on `pytorch/pytorch`.
 * Installs python libraries below:
   * seaborn
   * jupyter

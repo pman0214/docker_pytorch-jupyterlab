@@ -19,15 +19,13 @@
 # OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-FROM python:3.9-buster
+FROM pytorch/pytorch:1.9.0-cuda11.1-cudnn8-devel
 
 ENV DEBIAN_FRONTEND=noninteractive
-ARG CUDA
 
 COPY files/ /tmp/files/
 RUN set -x && \
-	chmod 755 /tmp/files/install.sh && \
-	/tmp/files/install_torch.sh && \
+	chmod 755 /tmp/files/install_*.sh && \
 	/tmp/files/install_jupyter.sh && \
 	rm -rf /tmp/files
 

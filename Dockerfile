@@ -26,7 +26,7 @@ ARG CUDA
 
 COPY files/ /tmp/files/
 RUN set -x && \
-	chmod 755 /tmp/files/install.sh && \
+	chmod 755 /tmp/files/install_*.sh && \
 	/tmp/files/install_torch.sh && \
 	/tmp/files/install_jupyter.sh && \
 	rm -rf /tmp/files

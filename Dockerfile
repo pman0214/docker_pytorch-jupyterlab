@@ -1,4 +1,4 @@
-# Copyright (c) 2020, Shigemi ISHIDA
+# Copyright (c) 2021, Shigemi ISHIDA
 # 
 # Permission is hereby granted, free of charge, to any person obtaining
 # a copy of this software and associated documentation files (the
@@ -19,36 +19,18 @@
 # OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-FROM pytorch/pytorch:1.8.0-cuda11.1-cudnn8-devel
+FROM python:3.9-buster
 
 ENV DEBIAN_FRONTEND=noninteractive
+ARG CUDA
 
+COPY files/ /tmp/files/
 RUN set -x && \
-	apt update && \
-	apt install -y tzdata && \
-	pip --no-cache-dir install seaborn jupyter jupyterlab scikit-learn imblearn statsmodels && \
-	jupyter notebook --generate-config --allow-root && \
-	ipython3 profile create
+	chmod 755 /tmp/files/install.sh && \
+	/tmp/files/install.sh ${CUDA} && \
+	rm -rf /tmp/files
 
-ENV JUPYTER_CONFIG=/root/.jupyter/jupyter_notebook_config.py \
-    IPYTHON_CONFIG=/root/.ipython/profile_default/ipython_config.py
-RUN : "generate jupyter config file" && { \
-	echo "c.NotebookApp.ip = '0.0.0.0'"; \
-	echo "c.NotebookApp.open_browser = False"; \
-	echo "c.NotebookApp.password = \"sha1:b7c40958676d:fe82e5432ba0be429aa7391812c64d75c22194bc\""; \
-	} | tee ${JUPYTER_CONFIG}
-RUN : "generate ipython config file" && { \
-	echo "c.InteractiveShellApp.exec_lines = ["; \
-	echo "	'%autoreload 2',"; \
-	echo "	'import numpy as np',"; \
-	echo "	'import matplotlib.pyplot as plt',"; \
-	echo "]"; \
-	echo "c.InteractiveShellApp.extensions = ["; \
-	echo "	'autoreload',"; \
-	echo "]"; \
-	} | tee -a ${IPYTHON_CONFIG}
-
-VOLUME /root
-WORKDIR /root
+VOLUME /app
+WORKDIR /app
 
 CMD ["jupyter", "lab", "--allow-root"]

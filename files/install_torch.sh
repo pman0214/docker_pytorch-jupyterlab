@@ -20,11 +20,6 @@ case $(arch) in
         exit 1
 esac
 
-apt update || exit 1
-apt -y upgrade || exit 1
-apt -y install tzdata build-essential || exit 1
-apt -y autoremove
-apt clean
-rm -rf /var/lib/apt/lists/*
+set -x
 
 pip3 install ${CUDA_TARGETS} ${TARGETS} -f https://download.pytorch.org/whl/torch_stable.html || exit 1

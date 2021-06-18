@@ -48,5 +48,5 @@ if [ ! -d $(dirname ${IPYTHON_CONFIG}) ]; then
     mkdir -p $(dirname ${IPYTHON_CONFIG})
 fi
 
-cat $(basename ${JUPYTER_CONFIG}) >  $(dirname ${JUPYTER_CONFIG}) || exit 1
-cat $(basename ${IPYTHON_CONFIG}) >> $(dirname ${IPYTHON_CONFIG}) || exit 1
+cat $(basename ${JUPYTER_CONFIG}) >  ${JUPYTER_CONFIG} || exit 1
+cat $(basename ${IPYTHON_CONFIG}) >> ${IPYTHON_CONFIG} || exit 1

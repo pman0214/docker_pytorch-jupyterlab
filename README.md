@@ -23,7 +23,7 @@ Jupyterlab's password is `jupyter`.
 ```
 docker pull pman0214/pytorch_jupyterlab:version
 ```
-1. Create a docker container with volume on `/app` and with port opened on `8888`.
+1. Create a docker container with the volume on `/app` and with the port opened on `8888`.
 ```
 docker run -d --rm -v $PWD:/app -p 8888:8888 pman0214/pytorch_jupyterlab:version
 ```
@@ -32,12 +32,12 @@ docker run -d --rm -v $PWD:/app -p 8888:8888 pman0214/pytorch_jupyterlab:version
 1. Shutdown jupyterlab from the `File` menu to stop and destroy the container.
 
 
-If you want to use CUDA, please run cuda version of the image. To use pytorch 1.9.0 with CUDA 11.1 with CuDNN 8, for example, run as:
+If you want to use CUDA, please run cuda version of the image. To use pytorch 1.13.1 with CUDA 11.6 with CuDNN 8, for example, run as:
 ```
-docker run --rm -d -v $PWD:/app -p 8888:8888 --gpus=all pman0214/pytorch_jupyterlab:1.9.0-cuda11.1-cudnn8-devel
+docker run --rm -d -v $PWD:/app -p 8888:8888 --gpus=all pman0214/pytorch_jupyterlab:1.13.1-cuda11.6-cudnn8-devel
 ```
 
-Please refer to [tags](https://hub.docker.com/r/pman0214/pytorch_jupyterlab/tags) to lookup images supporting CUDA. CUDA is available only on linux/amd64.
+Please refer to [tags](https://hub.docker.com/r/pman0214/pytorch_jupyterlab/tags) to look up images supporting CUDA. CUDA is available only on linux/amd64.
 
 ## Building
 
@@ -46,7 +46,7 @@ CUDA images are built with `Dockerfile_cuda`.
 
 ## Copyright, License
 
-Copyright (c) 2021, Shigemi ISHIDA
+Copyright (c) 2021-2023, Shigemi ISHIDA
 
 `Dockerfile` and `Dockerfile_cuda` are released under the MIT license.
 See `LICENSE`.

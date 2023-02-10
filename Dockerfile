@@ -1,4 +1,4 @@
-# Copyright (c) 2021, Shigemi ISHIDA
+# Copyright (c) 2021-2023, Shigemi ISHIDA
 # 
 # Permission is hereby granted, free of charge, to any person obtaining
 # a copy of this software and associated documentation files (the
@@ -19,7 +19,7 @@
 # OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-FROM python:3.9-buster
+FROM python:3.10-buster
 
 ENV DEBIAN_FRONTEND=noninteractive
 ARG CUDA

@@ -23,10 +23,10 @@
 
 cd $(dirname $0) || exit 1
 
-CUDA_TARGETS="torch==1.13.1
-torchvision==0.14.1
-torchaudio==0.13.1"
-TARGETS="torchtext==0.14.1"
+CUDA_TARGETS="torch==2.0.1
+torchvision==0.15.2
+torchaudio==2.0.2"
+TARGETS="torchtext==0.15.2"
 
 case $(arch) in
     aarch64|arm64)

@@ -30,8 +30,6 @@ set -x
 
 case $(arch) in
     aarch64|arm64)
-        apt-get update || exit 1
-        apt-get install --no-install-recommends -y curl ca-certificates || exit 1
         curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y || exit 1
         . "$HOME/.cargo/env"
         ;;

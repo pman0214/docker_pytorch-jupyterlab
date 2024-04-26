@@ -41,6 +41,9 @@ jobs:
             pman0214/pytorch_jupyterlab
           tags: |
             type=raw,enable=true,value=${{ inputs.release_tag }}
+            type=raw,enable=true,value=latest-gpu
+          flavor: |
+            latest=false
       - name: Build and push
         uses: docker/build-push-action@v5
         with:

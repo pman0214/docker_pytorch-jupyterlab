@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Copyright (c) 2021-2023, Shigemi ISHIDA
+# Copyright (c) 2021-2024, Shigemi ISHIDA
 # 
 # Permission is hereby granted, free of charge, to any person obtaining
 # a copy of this software and associated documentation files (the
@@ -23,17 +23,18 @@
 
 cd $(dirname $0) || exit 1
 
-CUDA_TARGETS="torch==2.0.1
-torchvision==0.15.2
-torchaudio==2.0.2"
-TARGETS="torchtext==0.15.2"
+CUDA_TARGETS="torch==2.3.0+cu121
+torchvision==0.18.0+cu121
+torchaudio==2.3.0+cu121
+torchtext==0.18.0"
+TARGETS=""
 
 case $(arch) in
     aarch64|arm64)
         ;;
     x86_64|amd64)
         # build for cpu
-        lines=$(echo "${CUDA_TARGETS}" | while read line; do
+        lines=$(echo "${CUDA_TARGETS}" | cut -d'+' -f1 | while read line; do
             echo $line+cpu
         done)
         CUDA_TARGETS=$lines

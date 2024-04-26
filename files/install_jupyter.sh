@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Copyright (c) 2021-2023, Shigemi ISHIDA
+# Copyright (c) 2021-2024, Shigemi ISHIDA
 # 
 # Permission is hereby granted, free of charge, to any person obtaining
 # a copy of this software and associated documentation files (the

@@ -88,10 +88,10 @@ print(imblearn.__version__)
 print(statsmodels.__version__)
 
 # GPU check (comment out with CPU image)
-torch.cuda.is_available()
-torch.cuda.device_count()
-torch.cuda.get_device_name(0)
-torch.cuda.get_device_capability(0)
+print(torch.cuda.is_available())
+print(torch.cuda.device_count())
+print(torch.cuda.get_device_name(0))
+print(torch.cuda.get_device_capability(0))
 ```
 
 ## Copyright, License

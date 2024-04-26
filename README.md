@@ -19,7 +19,7 @@ Docker images are available for x86_64 (amd64) and aarch64 (arm64) [on Docker Hu
 
 This image is built by:
 * Following pytorch installation instructions on [pytorch official page](https://pytorch.org).
-  * torch, torchvision, torchaudio, and torchtext are installed.
+  * torch, torchvision, and torchaudio are installed.
   * For CUDA version of the image, [pytorch/pytorch](https://hub.docker.com/r/pytorch/pytorch) image is used instead of installing pytorch.
 * Installing python modules:
   * seaborn

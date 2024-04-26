@@ -25,8 +25,7 @@ cd $(dirname $0) || exit 1
 
 CUDA_TARGETS="torch==2.3.0
 torchvision==0.18.0
-torchaudio==2.3.0
-torchtext==0.18.0"
+torchaudio==2.3.0"
 TARGETS=""
 
 case $(arch) in

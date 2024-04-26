@@ -8,6 +8,7 @@
   - [Overview](#overview)
   - [Simple Usage](#simple-usage)
   - [Building](#building)
+  - [Check installed version](#check-installed-version)
   - [Copyright, License](#copyright-license)
 
 ## Overview
@@ -56,6 +57,42 @@ Please refer to [tags](https://hub.docker.com/r/pman0214/pytorch_jupyterlab/tags
 
 `Dockerfile` supports multi-architecture build for linux/amd64 and linux/arm64.
 The CUDA version of the image is built with `Dockerfile_cuda`.
+
+## Check installed version
+
+Run these on jupyter.
+
+```
+import torch
+import torchvision
+import torchaudio
+print(torch.__version__)
+print(torchvision.__version__)
+print(torchaudio.__version__)
+
+import numpy as np
+import scipy as sp
+import pandas as pd
+import matplotlib as mpl
+import seaborn as sns
+import sklearn
+import imblearn
+import statsmodels
+print(np.__version__)
+print(sp.__version__)
+print(pd.__version__)
+print(mpl.__version__)
+print(sns.__version__)
+print(sklearn.__version__)
+print(imblearn.__version__)
+print(statsmodels.__version__)
+
+# GPU check (comment out with CPU image)
+torch.cuda.is_available()
+torch.cuda.device_count()
+torch.cuda.get_device_name(0)
+torch.cuda.get_device_capability(0)
+```
 
 ## Copyright, License
 

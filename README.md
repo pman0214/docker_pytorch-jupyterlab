@@ -15,6 +15,8 @@
 
 Pytorch + Jupyter Docker image based on [python docker image](https://hub.docker.com/_/python).
 
+LaTeX support version (for EPS/PDF plotting) is also available at https://hub.docker.com/r/pman0214/pytorch_jupyterlab_latex.
+
 Source code is available [on GitHub](https://github.com/pman0214/docker_pytorch-jupyterlab).
 Docker images are available for x86_64 (amd64) and aarch64 (arm64) [on Docker Hub](https://hub.docker.com/r/pman0214/pytorch_jupyterlab), which are automatically built with GitHub Actions. The CUDA version is only available for x86_64 (amd64).
 

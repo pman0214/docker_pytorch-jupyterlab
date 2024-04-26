@@ -15,6 +15,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Cleaning
+        run: |
+          docker image prune --force
       - name: Checkout
         uses: actions/checkout@v4
         with:

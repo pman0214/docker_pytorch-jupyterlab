@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Copyright (c) 2021-2024, Shigemi ISHIDA
+# Copyright (c) 2021-2025, Shigemi ISHIDA
 # 
 # Permission is hereby granted, free of charge, to any person obtaining
 # a copy of this software and associated documentation files (the
@@ -28,18 +28,7 @@ IPYTHON_CONFIG=/root/.ipython/profile_default/ipython_config.py
 
 set -x
 
-case $(arch) in
-    aarch64|arm64)
-        curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y || exit 1
-        . "$HOME/.cargo/env"
-        ;;
-    x86_64|amd64)
-        ;;
-    *)
-        exit 1
-esac
-
-pip --no-cache-dir install seaborn jupyter jupyterlab scikit-learn imblearn statsmodels || exit 1
+pip3 --no-cache-dir install lightning seaborn jupyter jupyterlab scikit-learn imblearn statsmodels || exit 1
 jupyter notebook --generate-config --allow-root || exit 1
 ipython3 profile create || exit 1
 
@@ -52,13 +41,3 @@ fi
 
 cat $(basename ${JUPYTER_CONFIG}) >  ${JUPYTER_CONFIG} || exit 1
 cat $(basename ${IPYTHON_CONFIG}) >> ${IPYTHON_CONFIG} || exit 1
-
-case $(arch) in
-    aarch64|arm64)
-        yes | rustup self uninstall
-        ;;
-    x86_64|amd64)
-        ;;
-    *)
-        exit 1
-esac

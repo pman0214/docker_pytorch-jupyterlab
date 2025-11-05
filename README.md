@@ -22,9 +22,10 @@ Docker images are available for x86_64 (amd64) and aarch64 (arm64) [on Docker Hu
 
 This image is built by:
 * Following pytorch installation instructions on [pytorch official page](https://pytorch.org).
-  * torch, torchvision, and torchaudio are installed.
+  * torch, torchvision, and torchaudio are installed. Note that torchaudio has moved to a maintenance phase.
   * For CUDA version of the image, [pytorch/pytorch](https://hub.docker.com/r/pytorch/pytorch) image is used instead of installing pytorch.
 * Installing python modules:
+  * pytorch lightning
   * seaborn
   * jupyter
   * jupyterlab
@@ -73,7 +74,6 @@ print(torchvision.__version__)
 print(torchaudio.__version__)
 
 import numpy as np
-import scipy as sp
 import pandas as pd
 import matplotlib as mpl
 import seaborn as sns
@@ -81,7 +81,6 @@ import sklearn
 import imblearn
 import statsmodels
 print(np.__version__)
-print(sp.__version__)
 print(pd.__version__)
 print(mpl.__version__)
 print(sns.__version__)
@@ -98,7 +97,7 @@ print(torch.cuda.get_device_capability(0))
 
 ## Copyright, License
 
-Copyright (c) 2021-2024, Shigemi ISHIDA
+Copyright (c) 2021-2025, Shigemi ISHIDA
 
 `Dockerfile` and `Dockerfile_cuda` are released under the MIT license.
 See `LICENSE`.

@@ -1,4 +1,4 @@
-# Copyright (c) 2021-2024, Shigemi ISHIDA
+# Copyright (c) 2021-2025, Shigemi ISHIDA
 # 
 # Permission is hereby granted, free of charge, to any person obtaining
 # a copy of this software and associated documentation files (the
@@ -19,7 +19,7 @@
 # OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-FROM python:3.12-bookworm
+FROM python:3.11.14-bookworm
 
 ENV DEBIAN_FRONTEND=noninteractive
 ARG CUDA

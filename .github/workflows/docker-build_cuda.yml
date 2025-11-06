@@ -51,18 +51,6 @@ jobs:
           platforms: linux/amd64
       - name: Check space before cleanup
         run: df -h
-      - name: Cleaning
-        run: |
-          docker images
-          sudo rm -rf "/opt/ghc" || true
-          sudo rm -rf "/usr/share/dotnet" || true
-          sudo rm -rf "$AGENT_TOOLSDIRECTORY" || true
-          sudo rm -rf "/usr/local/lib/android" || true
-          sudo rm -rf "/usr/local/share/boost" || true
-          docker rmi $(docker image ls -q --filter "reference=node*")
-          docker rmi $(docker image ls -q --filter "reference=debian*")
-          docker rmi $(docker image ls -q --filter "reference=alpine*")
-          docker rmi $(docker image ls -q --filter "reference=ubuntu:22.04")
       - name: apt-get remove cleanup
         run: |
           sudo apt-get remove --purge -y \
